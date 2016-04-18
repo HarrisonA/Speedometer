@@ -1,0 +1,20 @@
+.dial {
+  position: absolute;
+  top: 162px;
+  left: 133px;
+  z-index: 10;
+
+  /* -ms-transform: rotate(-120deg);  IE 9 */
+  /* -webkit-transform: rotate(-120deg);  Chrome, Safari, Opera */
+  transform: rotate(-120deg);
+/*  transform-origin: 50% 0%;
+*/}
+
+.meter {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color:#00fa0a;
+}
+
+
