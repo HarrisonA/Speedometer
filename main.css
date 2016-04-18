@@ -1,14 +1,14 @@
 .dial {
   position: absolute;
-  top: 162px;
-  left: 133px;
+  top: 78px;
+  left: 193px;
   z-index: 10;
 
   /* -ms-transform: rotate(-120deg);  IE 9 */
   /* -webkit-transform: rotate(-120deg);  Chrome, Safari, Opera */
-  transform: rotate(-120deg);
-/*  transform-origin: 50% 0%;
-*/}
+  transform: rotate(-114deg);
+  transform-origin: 50% 90%;
+}
 
 .meter {
   position: absolute;
