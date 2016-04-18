@@ -14,8 +14,8 @@ $(document).ready(function(){
       $('.meter').css('background-color', 'rgba(0, 225, 0, .2)');
 
     } else if ((start>-38) && (start<=38)) {
-      //yellow range
-      $('.meter').css('background-color', 'rgba(255, 255, 0, .2)');
+      //orange range
+      $('.meter').css('background-color', 'rgba(255, 165, 0, .2)');
 
     } else if ((start>38) && (start<=114)) {
       //red range
