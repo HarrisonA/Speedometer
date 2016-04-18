@@ -2,28 +2,50 @@
 
 $(document).ready(function(){
 
-  var start;
+  var start = -114;
 
   // get random number from a specific range
   function getRandomArbitrary(min, max) {
     return Math.random() * (max - min) + min;
-}
+  };
 
-
-  setInterval(function(){
-    start = getRandomArbitrary(-114, 114);
-
-    $('.dial').css('transform', 'rotate('+start+'deg)');
+  function setColor(start){
 
     if ((start>=-114) && (start<=-38)) {
-      $('.meter').css('background-color', 'rgba(0, 225, 0, .2)'); /*green*/
-    } else if ((start>-38) && (start<=38)) {
-      $('.meter').css('background-color', 'rgba(255, 255, 0, .2)'); /*yellow*/
-    } else if ((start>38) && (start<=114)) {
-      $('.meter').css('background-color', 'rgba(225, 0, 0, .2)'); /*red*/
-    }
-  }, 4000);
+      // green range
+      $('.meter').css('background-color', 'rgba(0, 225, 0, .2)');
 
+    } else if ((start>-38) && (start<=38)) {
+      //yellow range
+      $('.meter').css('background-color', 'rgba(255, 255, 0, .2)');
+
+    } else if ((start>38) && (start<=114)) {
+      //red range
+      $('.meter').css('background-color', 'rgba(225, 0, 0, .2)');
+    }
+  }
+
+
+  var spinOnce = setInterval(function(){
+
+    // On page load, rotate the dial from 0 to 180, every 20 ms
+    start++;
+    $('.dial').css('transform', 'rotate('+start+'deg)');
+    setColor(start);
+
+    // After the dial hits 180, then move it to random speeds
+    // (the original prompt)
+    if (start>114){
+      clearInterval(spinOnce);
+
+      var randomSpeeds = setInterval(function(){
+        start = getRandomArbitrary(-114, 114);
+        $('.dial').css('transform', 'rotate('+start+'deg)');
+        setColor(start);
+      }, 4000);
+    }
+
+  }, 20);
 
 });
 
